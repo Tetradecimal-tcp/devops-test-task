@@ -8,11 +8,11 @@ PORT = 8080
 class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/":
-            self._send_response(200, "Hello from Effective Mobile!")
+            self._send_response(200, "Hello from Effective Mobile!\n")
         elif self.path == "/health":
-            self._send_response(200, "OK")
+            self._send_response(200, "OK\n")
         else:
-            self._send_response(404, "Not Found")
+            self._send_response(404, "Not Found\n")
 
     def _send_response(self, status_code: int, body: str):
         response = body.encode("utf-8")
